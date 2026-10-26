@@ -1,11 +1,11 @@
 package com.koda.minitask1;
 
 public class Employee {
-  String id;
-  String name;
-  String position;
-  String department;
-  int salary;
+  private String id;
+  private String name;
+  private String position;
+  private String department;
+  private int salary;
 
   public Employee(String id, String name, String position, String department, int salary){
     this.id = id;
