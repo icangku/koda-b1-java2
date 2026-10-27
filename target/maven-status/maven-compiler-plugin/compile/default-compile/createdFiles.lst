@@ -1,3 +1,5 @@
 com/koda/minitask1/App.class
 com/koda/minitask1/EmployeeService.class
+com/koda/minitask1/PermanentEmployee.class
+com/koda/minitask1/ContractEmployee.class
 com/koda/minitask1/Employee.class

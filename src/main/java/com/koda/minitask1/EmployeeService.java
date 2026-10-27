@@ -18,8 +18,8 @@ public class EmployeeService {
     System.out.println("Salary :"+employee.getSalary());
   }
 
-  public void giveRaise(int salary){
-    employee.increaseSalary(salary);
+  public void giveRaise(int amount){
+    employee.increaseSalary(amount);
   }
 
   public void getCurrentSalary(){

@@ -8,6 +8,9 @@ abstract class Employee {
   private int salary;
 
   public Employee(String id, String name, String position, String department, int salary){
+    if(salary < 0 ){
+      throw new  IllegalArgumentException("Gaji Awal tidak boleh negatif");
+    }
     this.id = id;
     this.name = name;
     this.position = position;
@@ -37,10 +40,9 @@ abstract class Employee {
 
   protected void addSalary(int amount) {
     if (amount <= 0) {
-      System.out.println("Kenaikan gaji harus lebih dari 0");
-      return;
+      throw new IllegalArgumentException("Kenaikan gaji harus lebih dari 0");
     }
-    int newSalary = this.salary + amount;
+    int newSalary = Math.addExact(this.salary, amount);
     if (newSalary < 0) {
       System.out.println("Gaji tidak boleh negatif");
       return;
