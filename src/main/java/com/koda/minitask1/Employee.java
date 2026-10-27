@@ -1,6 +1,6 @@
 package com.koda.minitask1;
 
-public class Employee {
+abstract class Employee {
   private String id;
   private String name;
   private String position;
@@ -35,12 +35,19 @@ public class Employee {
     return this.salary;
   }
 
-  public void increaseSalary(int amount){
-    if(amount < 0){
-      System.out.println("Error: Salary increase must be greater than 0");
-    }else{
-      this.salary += amount;
-      System.out.println("Salary Increase: Rp"+this.salary);
+  protected void addSalary(int amount) {
+    if (amount <= 0) {
+      System.out.println("Kenaikan gaji harus lebih dari 0");
+      return;
     }
+    int newSalary = this.salary + amount;
+    if (newSalary < 0) {
+      System.out.println("Gaji tidak boleh negatif");
+      return;
+    }
+    this.salary = newSalary;
   }
+
+  public abstract void increaseSalary(int amount);
+
 }
